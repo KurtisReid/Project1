@@ -13,9 +13,9 @@ public interface ComplaintDAO {
 
     Complaint updateComplaintPriority(int id, Priority priority);
 
-    List<Complaint> getListOfClomplaints();
+    List<Complaint> getListOfComplaints();
 
-    Complaint updateComplaintMeeting(int id, String newMeetingId);
+    Complaint updateComplaintMeeting(int id, int newMeetingId);
 
     boolean deleteComplaintByID(int id);
 }

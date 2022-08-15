@@ -4,20 +4,26 @@ public class Complaint {
 
     private int id;
 
-    private String constituent_submission;
+    private String constituentSubmission;
 
-    private String complaint_desc;
+    private String complaintDesc;
+    
 
     private Priority priority;
 
-    private int meeting_id;
+    private int meetingID;
+    
 
     public Complaint(int id, String constituent_submission, String complaint_desc, Priority priority, int meeting_id) {
         this.id = id;
-        this.constituent_submission = constituent_submission;
-        this.complaint_desc = complaint_desc;
+        this.constituentSubmission = constituent_submission;
+        this.complaintDesc = complaint_desc;
         this.priority = priority;
-        this.meeting_id = meeting_id;
+        this.meetingID = meeting_id;
+    }
+
+    public Complaint() {
+
     }
 
     public int getId() {
@@ -28,46 +34,63 @@ public class Complaint {
         this.id = id;
     }
 
-    public String getConstituent_submission() {
-        return constituent_submission;
+    public String getConstituentSubmission() {
+        return constituentSubmission;
     }
 
-    public void setConstituent_submission(String constituent_submission) {
-        this.constituent_submission = constituent_submission;
+    public void setConstituentSubmission(String constituentSubmission) {
+        this.constituentSubmission = constituentSubmission;
     }
 
-    public String getComplaint_desc() {
-        return complaint_desc;
+    public String getComplaintDesc() {
+        return complaintDesc;
     }
 
-    public void setComplaint_desc(String complaint_desc) {
-        this.complaint_desc = complaint_desc;
+    public void setComplaintDesc(String complaint_desc) {
+        this.complaintDesc = complaint_desc;
     }
 
     public Priority getPriority() {
         return priority;
     }
 
-    public void setPriority(Priority priority) {
-        this.priority = priority;
+    public void setPriority(String priority) {
+
+        if (priority.toUpperCase() == Priority.ADDRESSED.name())
+        {
+            this.priority = Priority.ADDRESSED;
+        } else if (priority.toUpperCase() == Priority.LOW.name())
+        {
+            this.priority = Priority.LOW;
+        } else if (priority.toUpperCase() == Priority.IGNORED.name())
+        {
+            this.priority = Priority.IGNORED;
+        } else if (priority.toUpperCase() == Priority.HIGH.name())
+        {
+            this.priority = Priority.HIGH;
+        } else
+        {
+            this.priority = Priority.PENDING;
+        }
+
     }
 
-    public int getMeeting_id() {
-        return meeting_id;
+    public int getMeetingId() {
+        return meetingID;
     }
 
-    public void setMeeting_id(int meeting_id) {
-        this.meeting_id = meeting_id;
+    public void setMeetingId(int meeting_id) {
+        this.meetingID = meeting_id;
     }
 
     @Override
     public String toString() {
         return "Complaint{" +
                 "id=" + id +
-                ", constituent_submission='" + constituent_submission + '\'' +
-                ", complaint_desc='" + complaint_desc + '\'' +
+                ", constituent_submission='" + constituentSubmission + '\'' +
+                ", complaint_desc='" + complaintDesc + '\'' +
                 ", priority=" + priority +
-                ", meeting_id=" + meeting_id +
+                ", meeting_id=" + meetingID +
                 '}';
     }
 }

@@ -13,6 +13,10 @@ public class Meeting {
         this.date = date;
     }
 
+    public Meeting() {
+
+    }
+
     public int getId() {
         return id;
     }
