@@ -120,16 +120,8 @@ public class MeetingDAOPostgres implements MeetingDAO {
 
     @Override
     public boolean deleteMeetingByID(int id) {
-        try (Connection conn = ConnectionUtil.createConnection())
-        {
-            String sql = "delete from meeting where id = ?";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, id);
-            ps.execute();
-            return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
+        return false;
     }
+
+
 }
