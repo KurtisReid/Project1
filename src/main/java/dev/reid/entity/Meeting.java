@@ -5,12 +5,14 @@ public class Meeting {
 
     private String location;
 
-    private String date;
+    private int time;
 
-    public Meeting(int id, String location, String date) {
+    private String summary;
+
+    public Meeting(int id, String location, int date) {
         this.id = id;
         this.location = location;
-        this.date = date;
+        this.time = date;
     }
 
     public Meeting() {
@@ -33,12 +35,12 @@ public class Meeting {
         this.location = location;
     }
 
-    public String getDate() {
-        return date;
+    public int getTime() {
+        return time;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setTime(int time) {
+        this.time = time;
     }
 
     @Override
@@ -46,7 +48,7 @@ public class Meeting {
         return "Meeting{" +
                 "id=" + id +
                 ", location='" + location + '\'' +
-                ", date='" + date + '\'' +
+                ", date='" + time + '\'' +
                 '}';
     }
 }

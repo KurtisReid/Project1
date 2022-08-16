@@ -11,9 +11,11 @@ import org.jetbrains.annotations.NotNull;
 public class CreateComplaintHandler implements Handler {
     @Override
     public void handle(@NotNull Context ctx) throws Exception {
+        System.out.println("CreateComplaintHandler");
         String json = ctx.body();
         Gson gson = new Gson();
         Complaint complaint = gson.fromJson(json, Complaint.class);
+        System.out.println(complaint);
 
         Complaint registeredComplaint = App.complaintService.registerComplaint(complaint);
         String complaintJson = gson.toJson(registeredComplaint);

@@ -2,7 +2,7 @@ package dev.reid.entity;
 
 public class Complaint {
 
-    private int id;
+    private int complaintID;
 
     private String constituentSubmission;
 
@@ -15,7 +15,7 @@ public class Complaint {
     
 
     public Complaint(int id, String constituent_submission, String complaint_desc, Priority priority, int meeting_id) {
-        this.id = id;
+        this.complaintID = id;
         this.constituentSubmission = constituent_submission;
         this.complaintDesc = complaint_desc;
         this.priority = priority;
@@ -26,12 +26,12 @@ public class Complaint {
 
     }
 
-    public int getId() {
-        return id;
+    public int getComplaintID() {
+        return complaintID;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setComplaintID(int complaintID) {
+        this.complaintID = complaintID;
     }
 
     public String getConstituentSubmission() {
@@ -86,7 +86,7 @@ public class Complaint {
     @Override
     public String toString() {
         return "Complaint{" +
-                "id=" + id +
+                "id=" + complaintID +
                 ", constituent_submission='" + constituentSubmission + '\'' +
                 ", complaint_desc='" + complaintDesc + '\'' +
                 ", priority=" + priority +

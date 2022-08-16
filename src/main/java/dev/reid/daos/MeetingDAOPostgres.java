@@ -5,14 +5,14 @@ import dev.reid.utils.ConnectionUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class MeetingDAOPostgres implements MeetingDAO {
 
     @Override
     public Meeting createMeeting(Meeting meeting) {
+        System.out.println("MeetingDAOPostgres createMeeting");
+        System.out.println(meeting);
         try(Connection conn = ConnectionUtil.createConnection())
         {
 
@@ -23,7 +23,7 @@ public class MeetingDAOPostgres implements MeetingDAO {
 
             //preparedStatement.setInt(1, expense.getId());
             preparedStatement.setString(1, meeting.getLocation());
-            preparedStatement.setString(2, meeting.getDate());
+            preparedStatement.setInt(2, meeting.getTime());
 
             preparedStatement.execute();
 
@@ -62,7 +62,7 @@ public class MeetingDAOPostgres implements MeetingDAO {
             }
             Meeting meeting = new Meeting();
             meeting.setId(rs.getInt("meeting_id"));
-            meeting.setDate(rs.getString("meeting_date"));
+            meeting.setTime(rs.getInt("meeting_date"));
             meeting.setLocation(rs.getString("meeting_location"));
 
             return meeting;
@@ -104,7 +104,7 @@ public class MeetingDAOPostgres implements MeetingDAO {
                 //System.out.println(tempCount);
                 Meeting meeting = new Meeting();
                 meeting.setId(rs.getInt("meeting_id"));
-                meeting.setDate(rs.getString("meeting_date"));
+                meeting.setTime(rs.getInt("meeting_date"));
                 meetingList.add(meeting);
                 meeting.setLocation(rs.getString("meeting_location"));
 

@@ -5,7 +5,6 @@ import dev.reid.daos.ComplaintDAOPostgres;
 import dev.reid.entity.Complaint;
 import dev.reid.entity.Priority;
 import dev.reid.utils.ConnectionUtil;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -50,7 +49,7 @@ public class CompliantDAOTests {
         Complaint complaint3 = new Complaint(3,"Jawa", "Luke is lying", Priority.PENDING, 1);
         Complaint savedComplaint3 = complaintDAO.createComplaint(complaint);
 
-        Assertions.assertEquals(1, savedComplaint.getId());
+        Assertions.assertEquals(1, savedComplaint.getComplaintID());
 
     }
     @Test
@@ -65,7 +64,7 @@ public class CompliantDAOTests {
 
         Complaint savedComplaint4 = complaintDAO.getComplaintByID(1);
 
-        Assertions.assertEquals(1, savedComplaint4.getId());
+        Assertions.assertEquals(1, savedComplaint4.getComplaintID());
     }
 
     @Test
