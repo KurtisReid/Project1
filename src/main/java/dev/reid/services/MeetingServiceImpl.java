@@ -4,6 +4,8 @@ import dev.reid.daos.MeetingDAO;
 import dev.reid.daos.MeetingDAOPostgres;
 import dev.reid.entity.Meeting;
 
+import java.util.List;
+
 public class MeetingServiceImpl implements MeetingService{
     private MeetingDAO meetingDAO = new MeetingDAOPostgres();
     @Override
@@ -12,5 +14,10 @@ public class MeetingServiceImpl implements MeetingService{
         System.out.println(meeting);
         Meeting savedMeeting = this.meetingDAO.createMeeting(meeting);
         return savedMeeting;
+    }
+
+    @Override
+    public List<Meeting> viewMeetings() {
+        return this.meetingDAO.getListOfMeetings();
     }
 }

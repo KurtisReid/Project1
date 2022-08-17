@@ -9,10 +9,19 @@ public class Meeting {
 
     private String summary;
 
-    public Meeting(int id, String location, int date) {
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public Meeting(int id, String location, int date, String summary) {
         this.id = id;
         this.location = location;
         this.time = date;
+        this.summary = summary;
     }
 
     public Meeting() {
@@ -48,7 +57,8 @@ public class Meeting {
         return "Meeting{" +
                 "id=" + id +
                 ", location='" + location + '\'' +
-                ", date='" + time + '\'' +
+                ", time=" + time +
+                ", summary='" + summary + '\'' +
                 '}';
     }
 }

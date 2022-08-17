@@ -17,13 +17,14 @@ public class MeetingDAOPostgres implements MeetingDAO {
         {
 
 
-            String sql = "insert into meeting values (default, ?, ?)";
+            String sql = "insert into meeting values (default, ?, ?, ?)";
 
             PreparedStatement preparedStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             //preparedStatement.setInt(1, expense.getId());
             preparedStatement.setString(1, meeting.getLocation());
             preparedStatement.setInt(2, meeting.getTime());
+            preparedStatement.setString(3, meeting.getSummary());
 
             preparedStatement.execute();
 
