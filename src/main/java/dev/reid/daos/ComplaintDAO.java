@@ -15,7 +15,7 @@ public interface ComplaintDAO {
 
     List<Complaint> getListOfComplaints();
 
-    Complaint updateComplaintMeeting(int id, int newMeetingId);
+    Complaint updateComplaintMeeting(int id, int newMeetingId, Priority newPriority);
 
     boolean deleteComplaintByID(int id);
 }

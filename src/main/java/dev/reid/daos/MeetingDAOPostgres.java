@@ -26,13 +26,18 @@ public class MeetingDAOPostgres implements MeetingDAO {
             preparedStatement.setInt(2, meeting.getTime());
             preparedStatement.setString(3, meeting.getSummary());
 
+            //System.out.println(preparedStatement);
+
             preparedStatement.execute();
 
             ResultSet rs = preparedStatement.getGeneratedKeys();
             rs.next();
 
-            int generatedKey = rs.getInt("id");
+            int generatedKey = rs.getInt("meeting_id");
+            System.out.println("generatedKey: " + generatedKey);
             meeting.setId(generatedKey);
+
+            //preparedStatement.execute();
             //System.out.println("EXpense" + expense);
             return meeting;
 
@@ -108,6 +113,7 @@ public class MeetingDAOPostgres implements MeetingDAO {
                 meeting.setTime(rs.getInt("meeting_date"));
                 meetingList.add(meeting);
                 meeting.setLocation(rs.getString("meeting_location"));
+                meeting.setSummary(rs.getString("summary"));
 
                 //tempCount++;
 

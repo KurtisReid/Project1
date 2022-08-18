@@ -4,7 +4,7 @@ public class Complaint {
 
     private int complaintID;
 
-    private String constituentSubmission;
+    //private String constituentSubmission;
 
     private String complaintDesc;
     
@@ -14,9 +14,9 @@ public class Complaint {
     private int meetingID;
     
 
-    public Complaint(int id, String constituent_submission, String complaint_desc, Priority priority, int meeting_id) {
+    public Complaint(int id, String complaint_desc, Priority priority, int meeting_id) {
         this.complaintID = id;
-        this.constituentSubmission = constituent_submission;
+        //this.constituentSubmission = constituent_submission;
         this.complaintDesc = complaint_desc;
         this.priority = priority;
         this.meetingID = meeting_id;
@@ -34,13 +34,7 @@ public class Complaint {
         this.complaintID = complaintID;
     }
 
-    public String getConstituentSubmission() {
-        return constituentSubmission;
-    }
 
-    public void setConstituentSubmission(String constituentSubmission) {
-        this.constituentSubmission = constituentSubmission;
-    }
 
     public String getComplaintDesc() {
         return complaintDesc;
@@ -87,7 +81,6 @@ public class Complaint {
     public String toString() {
         return "Complaint{" +
                 "id=" + complaintID +
-                ", constituent_submission='" + constituentSubmission + '\'' +
                 ", complaint_desc='" + complaintDesc + '\'' +
                 ", priority=" + priority +
                 ", meeting_id=" + meetingID +

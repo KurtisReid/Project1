@@ -17,6 +17,12 @@ public class Meeting {
         this.summary = summary;
     }
 
+    public Meeting(String location, int time, String summary) {
+        this.location = location;
+        this.time = time;
+        this.summary = summary;
+    }
+
     public Meeting(int id, String location, int date, String summary) {
         this.id = id;
         this.location = location;
