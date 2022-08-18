@@ -22,7 +22,7 @@ public class UpdateComplaintMeetingHandler implements Handler {
         System.out.println("UpdateComplaintMeetingHandler");
 
         Complaint complaint = gson.fromJson(expenseJson, Complaint.class);
-        // MADE IT
+        // MADE IT gftj
 
         Complaint registeredComplaint = App.complaintService.attachComplaintToMeeting(complaintId, meetingID, Priority.HIGH);
 
