@@ -3,6 +3,7 @@ package dev.reid.handlers;
 import com.google.gson.Gson;
 import dev.reid.app.App;
 import dev.reid.entity.Complaint;
+import dev.reid.entity.Priority;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
 import org.jetbrains.annotations.NotNull;
@@ -21,8 +22,9 @@ public class UpdateComplaintMeetingHandler implements Handler {
         System.out.println("UpdateComplaintMeetingHandler");
 
         Complaint complaint = gson.fromJson(expenseJson, Complaint.class);
+        // MADE IT
 
-        Complaint registeredComplaint = App.complaintService.attachComplaintToMeeting(complaintId, meetingID, complaint.getPriority());
+        Complaint registeredComplaint = App.complaintService.attachComplaintToMeeting(complaintId, meetingID, Priority.HIGH);
 
         String complaintJson = gson.toJson(registeredComplaint);
 

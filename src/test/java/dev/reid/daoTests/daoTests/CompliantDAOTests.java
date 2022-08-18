@@ -116,6 +116,7 @@ public class CompliantDAOTests {
     @Test
     void update_Complaint_Meeting_Test()
     {
+        /*
         Complaint complaint = new Complaint(1, "thg", Priority.PENDING, 1);
         Complaint savedComplaint = complaintDAO.createComplaint(complaint);
         Complaint complaint2 = new Complaint(2, "Empire stole something", Priority.PENDING, 1);
@@ -123,9 +124,11 @@ public class CompliantDAOTests {
         Complaint complaint3 = new Complaint(3, "Bad people are here", Priority.PENDING, 1);
         Complaint savedComplaint3 = complaintDAO.createComplaint(complaint3);
 
+         */
+
         Complaint updatedComplaint = complaintDAO.updateComplaintMeeting(1, 2, Priority.PENDING);
-        Complaint updatedComplaint2 = complaintDAO.updateComplaintMeeting(2, 2, Priority.IGNORED);
-        Complaint updatedComplaint3 = complaintDAO.updateComplaintMeeting(3, 2, Priority.LOW);
+        Complaint updatedComplaint2 = complaintDAO.updateComplaintMeeting(2, 4, Priority.IGNORED);
+        Complaint updatedComplaint3 = complaintDAO.updateComplaintMeeting(3, 3, Priority.LOW);
         Assertions.assertEquals(updatedComplaint.getPriority(), Priority.PENDING);
         Assertions.assertEquals(Priority.IGNORED, updatedComplaint2.getPriority());
         Assertions.assertEquals(Priority.LOW, updatedComplaint3.getPriority());
