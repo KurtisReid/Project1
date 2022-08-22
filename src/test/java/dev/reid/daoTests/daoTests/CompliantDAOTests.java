@@ -18,7 +18,7 @@ import java.util.List;
 public class CompliantDAOTests {
 
     static ComplaintDAO complaintDAO = new ComplaintDAOPostgres();
-
+/*
     @BeforeAll
     static void setup()
     {
@@ -38,7 +38,7 @@ public class CompliantDAOTests {
             e.printStackTrace();
         }
     }
-
+*/
     @Test
     void create_complaint_Test()
     {
