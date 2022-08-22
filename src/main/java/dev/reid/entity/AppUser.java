@@ -9,6 +9,9 @@ public class AppUser {
 
     private String role;
 
+    public AppUser() {
+    }
+
     public AppUser(int user_id, String username, String password, String role) {
         this.user_id = user_id;
         this.username = username;

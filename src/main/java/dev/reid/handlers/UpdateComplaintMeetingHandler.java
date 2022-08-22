@@ -24,7 +24,7 @@ public class UpdateComplaintMeetingHandler implements Handler {
         Complaint complaint = gson.fromJson(expenseJson, Complaint.class);
         // MADE IT gftj
 
-        Complaint registeredComplaint = App.complaintService.attachComplaintToMeeting(complaintId, meetingID, Priority.HIGH);
+        Complaint registeredComplaint = App.complaintService.attachComplaintToMeeting(complaintId, meetingID, complaint.getPriority());
 
         String complaintJson = gson.toJson(registeredComplaint);
 

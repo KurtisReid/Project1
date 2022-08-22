@@ -50,16 +50,16 @@ public class Complaint {
 
     public void setPriority(String priority) {
 
-        if (priority.toUpperCase() == Priority.ADDRESSED.name())
+        if (priority.toUpperCase().equals(Priority.ADDRESSED.name()))
         {
             this.priority = Priority.ADDRESSED;
-        } else if (priority.toUpperCase() == Priority.LOW.name())
+        } else if (priority.toUpperCase().equals(Priority.LOW.name()))
         {
             this.priority = Priority.LOW;
-        } else if (priority.toUpperCase() == Priority.IGNORED.name())
+        } else if (priority.toUpperCase().equals(Priority.IGNORED.name()))
         {
             this.priority = Priority.IGNORED;
-        } else if (priority.toUpperCase() == Priority.HIGH.name())
+        } else if (priority.toUpperCase().equals(Priority.HIGH.name()))
         {
             this.priority = Priority.HIGH;
         } else
