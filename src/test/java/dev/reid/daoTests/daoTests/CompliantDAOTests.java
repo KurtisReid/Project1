@@ -139,21 +139,7 @@ public class CompliantDAOTests {
         Assertions.assertEquals(updatedComplaint.getMeetingId(), 2);
 
     }
-    @Test
-    void delete_Complaint_By_ID_Test()
-    {
-        Complaint complaint = new Complaint(1, "Darth vader destroyed my house again", Priority.PENDING, 1);
-        Complaint savedComplaint = complaintDAO.createComplaint(complaint);
-        Complaint complaint2 = new Complaint(2, "Jawas stole something", Priority.PENDING, 1);
-        Complaint savedComplaint2 = complaintDAO.createComplaint(complaint2);
-        Complaint complaint3 = new Complaint(3, "Luke is lying", Priority.PENDING, 1);
-        Complaint savedComplaint3 = complaintDAO.createComplaint(complaint3);
 
-        boolean result = complaintDAO.deleteComplaintByID(1);
-
-        Assertions.assertEquals(true, result);
-
-    }
 /*
     @AfterAll
     static void teardown()

@@ -47,7 +47,7 @@ public class MeetingDAOTests {
         System.out.println("hello: " + meetingDAO.getListOfMeetings());
         int size = meetingDAO.getListOfMeetings().size();
 
-        Assertions.assertEquals(size+1, savedMeeting.getId());
+        Assertions.assertEquals(size-1, savedMeeting.getId());
 
     }
 

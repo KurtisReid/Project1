@@ -91,7 +91,7 @@ public class ComplaintDAOPostgres implements ComplaintDAO {
         try(Connection conn = ConnectionUtil.createConnection()) {
             //int id, double expenseCost, Status status, int employeeIssuer, String desc
 
-            String sql = "update complaint set priority = ? where id = ?";
+            String sql = "update complaint set priority = ? where complaint_id = ?";
 
             Complaint complaint = getComplaintByID(id);
             if (complaint == null)
